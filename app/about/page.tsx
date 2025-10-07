@@ -22,7 +22,7 @@ const About = () => {
     {
       icon: Heart,
       title: "Integrity & Trust",
-      description: "Built on honesty and transparency, we've earned the trust of countless Connecticut homeowners.",
+      description: "Built on honesty and transparency, we&apos;ve earned the trust of countless Connecticut homeowners.",
     },
   ];
 
@@ -101,7 +101,7 @@ const About = () => {
               About Pro Innovations
             </h1>
             <p className="text-xl text-slate-600 mb-8 leading-relaxed">
-              Building Excellence, Delivering Quality - For over a decade, we've been transforming homes 
+              Building Excellence, Delivering Quality - For over a decade, we&apos;ve been transforming homes 
               and businesses across Connecticut with professional construction and renovation services.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center text-sm text-slate-500">
@@ -156,13 +156,13 @@ const About = () => {
                 </p>
                 <p>
                   Our team of skilled craftsmen brings decades of combined experience to every project. 
-                  Whether it's new construction, a kitchen remodel, custom carpentry, or a fresh coat of paint, 
+                  Whether it&apos;s new construction, a kitchen remodel, custom carpentry, or a fresh coat of paint, 
                   we approach each job with the same dedication to quality and customer satisfaction.
                 </p>
                 <p>
-                  We believe that your home or business deserves the best. That's why we use only premium materials, 
+                  We believe that your home or business deserves the best. That&apos;s why we use only premium materials, 
                   employ skilled professionals, and stand behind our work with comprehensive warranties. 
-                  When you choose Pro Innovations, you're choosing quality that lasts.
+                  When you choose Pro Innovations, you&apos;re choosing quality that lasts.
                 </p>
               </div>
             </div>
@@ -242,7 +242,7 @@ const About = () => {
               Ready to Start Your Project?
             </h2>
             <p className="text-slate-300 text-lg mb-8 leading-relaxed">
-              Let's discuss your vision and bring it to life. Contact us today for a free consultation 
+              Let&apos;s discuss your vision and bring it to life. Contact us today for a free consultation 
               and discover how Pro Innovations can transform your space.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">

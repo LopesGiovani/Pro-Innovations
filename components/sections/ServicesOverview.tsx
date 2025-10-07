@@ -47,7 +47,7 @@ const ServicesOverview = () => {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
-          {services.map((service, index) => {
+          {services.map((service) => {
             const Icon = service.icon;
             return (
               <Card key={service.title} className="overflow-hidden hover-lift group border-0 shadow-lg hover:shadow-2xl transition-all duration-500 bg-white">
@@ -85,7 +85,7 @@ const ServicesOverview = () => {
             Need a Custom Solution?
           </h3>
           <p className="text-gray-600 mb-6 max-w-2xl mx-auto">
-            Every project is unique. Let's discuss your specific needs and create a tailored approach that exceeds your expectations.
+            Every project is unique. Let&apos;s discuss your specific needs and create a tailored approach that exceeds your expectations.
           </p>
           <Button asChild size="lg" variant="default" className="group shadow-lg hover:shadow-xl transition-shadow">
             <Link href="/services">
