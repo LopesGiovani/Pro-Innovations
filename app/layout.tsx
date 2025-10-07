@@ -7,6 +7,7 @@ import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { ThemeProvider } from "@/components/providers/theme-provider";
+import { ClientLayout } from "@/components/layout/client-layout";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -45,9 +46,11 @@ export default function RootLayout({
             <Toaster />
             <Sonner />
             <Header />
-            <main className="min-h-screen">
-              {children}
-            </main>
+            <ClientLayout>
+              <main className="min-h-screen">
+                {children}
+              </main>
+            </ClientLayout>
             <Footer />
           </TooltipProvider>
         </ThemeProvider>
