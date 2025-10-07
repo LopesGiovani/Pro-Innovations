@@ -1,7 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { Resend } from 'resend'
 import { contactFormSchema, RATE_LIMIT } from '@/lib/validations'
-import { z } from 'zod'
 
 // Initialize Resend
 const resend = new Resend(process.env.RESEND_API_KEY)
@@ -67,7 +66,14 @@ function getClientIP(request: NextRequest): string {
 }
 
 // Template de email
-function createEmailTemplate(data: any) {
+function createEmailTemplate(data: {
+  name: string;
+  email: string;
+  phone?: string;
+  subject: string;
+  service?: string;
+  message: string;
+}) {
   return `
     <!DOCTYPE html>
     <html>
