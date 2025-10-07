@@ -231,7 +231,7 @@ const Portfolio = () => {
                   View All Projects
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Button>
-                <Button variant="outline" className="border-white text-white hover:bg-white hover:text-blue-600 px-8 py-3 text-lg font-semibold">
+                <Button variant="outline" className="bg-white text-blue-600 hover:bg-gray-100 px-8 py-3 text-lg font-semibold">
                   Get Free Quote
                 </Button>
               </div>
