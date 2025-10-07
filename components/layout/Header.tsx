@@ -32,7 +32,7 @@ const Header = () => {
               alt="Pro Innovations Logo" 
               width={120}
               height={48}
-              className="h-12"
+              className="h-20"
               style={{ width: "auto" }}
             />
           </Link>
