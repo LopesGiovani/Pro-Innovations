@@ -2,8 +2,8 @@ import { NextRequest, NextResponse } from 'next/server'
 import { Resend } from 'resend'
 import { contactFormSchema, RATE_LIMIT } from '@/lib/validations'
 
-// Initialize Resend
-const resend = new Resend(process.env.RESEND_API_KEY)
+// Initialize Resend (conditional to avoid build errors)
+const resend = process.env.RESEND_API_KEY ? new Resend(process.env.RESEND_API_KEY) : null
 
 // Simple in-memory storage for rate limiting
 // In production, use Redis or database
@@ -176,8 +176,8 @@ export async function POST(request: NextRequest) {
 
     const data = validationResult.data
 
-    // Check if Resend API key is configured
-    if (!process.env.RESEND_API_KEY) {
+    // Check if Resend is configured
+    if (!resend) {
       console.error('RESEND_API_KEY not configured')
       return NextResponse.json(
         { error: 'Email service not configured' },
@@ -187,8 +187,8 @@ export async function POST(request: NextRequest) {
 
     // Send email
     const emailResult = await resend.emails.send({
-      from: 'contato@proinnovations.com.br', // Replace with your verified domain
-      to: ['contato@proinnovations.com.br'], // Destination email
+      from: process.env.FROM_EMAIL || 'noreply@resend.dev',
+      to: [process.env.CONTACT_EMAIL || 'contato@proinnovations.com.br'],
       subject: `[SITE] ${data.subject}`,
       html: createEmailTemplate(data),
       replyTo: data.email, // Allows direct reply to client

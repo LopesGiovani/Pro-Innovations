@@ -36,7 +36,7 @@ const Contact = () => {
           name: data.name,
           email: data.email,
           phone: data.phone,
-          subject: data.service, // Usando service como subject
+          subject: data.subject,
           message: data.message,
           service: data.service,
         }),
@@ -191,26 +191,41 @@ const Contact = () => {
                     </div>
                   </div>
 
+                  <div>
+                    <label htmlFor="phone" className="block text-sm font-semibold text-slate-700 mb-2">
+                      Phone Number
+                    </label>
+                    <Input
+                      id="phone"
+                      type="tel"
+                      {...register("phone")}
+                      placeholder="(123) 456-7890"
+                      className={`h-12 ${errors.phone ? "border-red-500 focus:border-red-500" : "border-slate-300 focus:border-blue-500"}`}
+                    />
+                    {errors.phone && (
+                      <p className="text-red-500 text-sm mt-1">{errors.phone.message}</p>
+                    )}
+                  </div>
+
+                  <div>
+                    <label htmlFor="subject" className="block text-sm font-semibold text-slate-700 mb-2">
+                      Subject *
+                    </label>
+                    <Input
+                      id="subject"
+                      {...register("subject")}
+                      placeholder="Brief description of your project"
+                      className={`h-12 ${errors.subject ? "border-red-500 focus:border-red-500" : "border-slate-300 focus:border-blue-500"}`}
+                    />
+                    {errors.subject && (
+                      <p className="text-red-500 text-sm mt-1">{errors.subject.message}</p>
+                    )}
+                  </div>
+
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div>
-                      <label htmlFor="phone" className="block text-sm font-semibold text-slate-700 mb-2">
-                        Phone Number *
-                      </label>
-                      <Input
-                        id="phone"
-                        type="tel"
-                        {...register("phone")}
-                        placeholder="(123) 456-7890"
-                        className={`h-12 ${errors.phone ? "border-red-500 focus:border-red-500" : "border-slate-300 focus:border-blue-500"}`}
-                      />
-                      {errors.phone && (
-                        <p className="text-red-500 text-sm mt-1">{errors.phone.message}</p>
-                      )}
-                    </div>
-
-                    <div>
                       <label htmlFor="service" className="block text-sm font-semibold text-slate-700 mb-2">
-                        Service of Interest *
+                        Service of Interest
                       </label>
                       <select
                         id="service"
@@ -230,16 +245,17 @@ const Contact = () => {
                         <p className="text-red-500 text-sm mt-1">{errors.service.message}</p>
                       )}
                     </div>
+                    <div></div>
                   </div>
 
                   <div>
                     <label htmlFor="message" className="block text-sm font-semibold text-slate-700 mb-2">
-                      Project Details *
+                      Project Details * <span className="text-slate-500 font-normal">(minimum 10 characters)</span>
                     </label>
                     <Textarea
                       id="message"
                       {...register("message")}
-                      placeholder="Please describe your project, timeline, and any specific requirements..."
+                      placeholder="Please describe your project in detail. For example: I need kitchen remodeling including cabinet installation, countertop replacement, and painting. Timeline is flexible but prefer completion within 2 months..."
                       rows={6}
                       className={`${errors.message ? "border-red-500 focus:border-red-500" : "border-slate-300 focus:border-blue-500"}`}
                     />
