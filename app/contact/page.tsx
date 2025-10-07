@@ -3,22 +3,12 @@
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import * as z from "zod";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Phone, Mail, MapPin, Clock, CheckCircle, Shield, Award } from "lucide-react";
+import { Phone, Mail, MapPin, Clock, CheckCircle, Shield, Award, Loader2 } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
-
-const contactSchema = z.object({
-  name: z.string().min(2, "Name must be at least 2 characters"),
-  email: z.string().email("Invalid email address"),
-  phone: z.string().min(10, "Phone number must be at least 10 digits"),
-  service: z.string().min(1, "Please select a service"),
-  message: z.string().min(10, "Message must be at least 10 characters"),
-});
-
-type ContactFormData = z.infer<typeof contactSchema>;
+import { contactFormSchema, type ContactFormData } from "@/lib/validations";
 
 const Contact = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -30,20 +20,52 @@ const Contact = () => {
     formState: { errors },
     reset,
   } = useForm<ContactFormData>({
-    resolver: zodResolver(contactSchema),
+    resolver: zodResolver(contactFormSchema),
   });
 
   const onSubmit = async (data: ContactFormData) => {
     setIsSubmitting(true);
-    // Simulate API call
-    await new Promise((resolve) => setTimeout(resolve, 2000));
-    console.log("Form data:", data);
-    toast({
-      title: "Message Received",
-      description: "Thank you for contacting us. We will respond within 24 hours.",
-    });
-    reset();
-    setIsSubmitting(false);
+    
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          name: data.name,
+          email: data.email,
+          phone: data.phone,
+          subject: data.service, // Usando service como subject
+          message: data.message,
+          service: data.service,
+        }),
+      });
+
+      const result = await response.json();
+
+      if (!response.ok) {
+        throw new Error(result.error || 'Failed to send message');
+      }
+
+      toast({
+        title: "✅ Message Sent!",
+        description: result.message || "Thank you for contacting us! We'll respond within 24 hours.",
+      });
+      
+      reset();
+      
+    } catch (error) {
+      console.error('Error sending form:', error);
+      
+      toast({
+        title: "❌ Send Failed",
+        description: error instanceof Error ? error.message : "Please try again in a few minutes.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const contactInfo = [
@@ -232,7 +254,14 @@ const Contact = () => {
                     disabled={isSubmitting} 
                     className="w-full h-12 bg-blue-600 hover:bg-blue-700 text-white font-semibold"
                   >
-                    {isSubmitting ? "Sending Message..." : "Send Message"}
+                    {isSubmitting ? (
+                      <>
+                        <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                        Sending...
+                      </>
+                    ) : (
+                      "Send Message"
+                    )}
                   </Button>
                 </form>
               </div>
