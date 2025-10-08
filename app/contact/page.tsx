@@ -92,8 +92,8 @@ const Contact = () => {
     {
       icon: Clock,
       title: "Business Hours",
-      info: "Monday - Friday: 8:00 AM - 6:00 PM",
-      description: "Saturday: 9:00 AM - 4:00 PM"
+      info: "Monday - Sunday: 7:00 AM - 6:00 PM",
+      description: "Open every day of the week"
     },
   ];
 
