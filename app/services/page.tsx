@@ -2,6 +2,7 @@ import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Check, ArrowRight } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 
 const Services = () => {
   const services = [
@@ -77,10 +78,12 @@ const Services = () => {
               <p className="text-white/90 text-xl md:text-2xl leading-relaxed mb-8">
                 Comprehensive construction and renovation solutions for your home or business
               </p>
-              <Button className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 text-lg">
-                Get Free Quote
-                <ArrowRight className="ml-2 h-5 w-5" />
-              </Button>
+              <Link href="/contact">
+                <Button className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 text-lg">
+                  Get Free Quote
+                  <ArrowRight className="ml-2 h-5 w-5" />
+                </Button>
+              </Link>
             </div>
           </div>
         </section>

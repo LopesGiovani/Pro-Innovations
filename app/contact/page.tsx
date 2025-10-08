@@ -71,22 +71,22 @@ const Contact = () => {
   const contactInfo = [
     {
       icon: MapPin,
-      title: "Office Location",
-      info: "Connecticut, USA",
+      title: "Address",
+      info: "213 mohegan dr, West Hartford, CT 06117, United States",
       description: "Serving Connecticut and surrounding areas"
     },
     {
       icon: Phone,
       title: "Phone",
-      info: "(123) 456-7890",
-      link: "tel:+1234567890",
+      info: "+1 (860) 936-0377",
+      link: "tel:+18609360377",
       description: "Available Monday through Friday"
     },
     {
       icon: Mail,
       title: "Email",
-      info: "info@proinnovations.com",
-      link: "mailto:info@proinnovations.com",
+      info: "Ctproinnovations@gmail.com",
+      link: "mailto:Ctproinnovations@gmail.com",
       description: "Professional consultation available"
     },
     {
@@ -199,7 +199,7 @@ const Contact = () => {
                       id="phone"
                       type="tel"
                       {...register("phone")}
-                      placeholder="(123) 456-7890"
+                      placeholder="+1 (860) 936-0377"
                       className={`h-12 ${errors.phone ? "border-red-500 focus:border-red-500" : "border-slate-300 focus:border-blue-500"}`}
                     />
                     {errors.phone && (

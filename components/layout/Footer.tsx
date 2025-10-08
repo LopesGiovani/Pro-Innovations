@@ -75,24 +75,24 @@ const Footer = () => {
             <ul className="space-y-3">
               <li className="flex items-start gap-2">
                 <MapPin className="h-5 w-5 flex-shrink-0 mt-0.5" />
-                <span className="text-background/80">Connecticut, USA</span>
+                <span className="text-background/80">213 mohegan dr, West Hartford, CT 06117, United States</span>
               </li>
               <li className="flex items-center gap-2">
                 <Phone className="h-5 w-5 flex-shrink-0" />
                 <a
-                  href="tel:+1234567890"
+                  href="tel:+18609360377"
                   className="text-background/80 hover:text-background transition-colors"
                 >
-                  (123) 456-7890
+                  +1 (860) 936-0377
                 </a>
               </li>
               <li className="flex items-center gap-2">
                 <Mail className="h-5 w-5 flex-shrink-0" />
                 <a
-                  href="mailto:info@proinnovations.com"
+                  href="mailto:Ctproinnovations@gmail.com"
                   className="text-background/80 hover:text-background transition-colors"
                 >
-                  info@proinnovations.com
+                  Ctproinnovations@gmail.com
                 </a>
               </li>
               <li className="flex items-start gap-2">
