@@ -235,10 +235,11 @@ const Contact = () => {
                         }`}
                       >
                         <option value="">Select a service</option>
-                        <option value="construction">General Construction</option>
-                        <option value="remodeling">Home Remodeling</option>
-                        <option value="carpentry">Custom Carpentry</option>
-                        <option value="painting">Professional Painting</option>
+                        <option value="facade">Facade Renovation & Restoration</option>
+                        <option value="painting">Professional Interior Painting</option>
+                        <option value="carpentry">Custom Carpentry & Finishes</option>
+                        <option value="kitchen">Kitchen Renovation & Lighting</option>
+                        <option value="windows">Window Decoration & Treatment</option>
                         <option value="consultation">Project Consultation</option>
                       </select>
                       {errors.service && (

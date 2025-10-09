@@ -7,26 +7,26 @@ import { Card, CardContent } from "@/components/ui/card";
 const ServicesOverview = () => {
   const services = [
     {
-      title: "Construction Services",
-      description: "New construction, home additions, and commercial projects with professional quality.",
+      title: "Facade Renovation & Restoration",
+      description: "Repair and preparation of exterior surfaces. We remove old and peeling paint, treat wood, and apply new coatings.",
       icon: Hammer,
       image: "/construction.jpg",
     },
     {
-      title: "Painting Services",
-      description: "Interior and exterior painting that transforms your space with lasting beauty.",
+      title: "Professional Interior Painting",
+      description: "Meticulous interior preparation for painting, including complete protection of floors, furniture, and non-paintable areas.",
       icon: Paintbrush,
       image: "/painting.jpg",
     },
     {
-      title: "Carpentry Services",
-      description: "Custom woodwork, trim installation, and cabinet craftsmanship.",
+      title: "Custom Carpentry & Finishes",
+      description: "Construction and installation of interior structures like stairs, walls, and ceilings with various wood finishes.",
       icon: Wrench,
       image: "/carpentry.jpg",
     },
     {
-      title: "Remodeling Services",
-      description: "Complete kitchen, bathroom, and whole home renovation services.",
+      title: "Kitchen Renovation & Lighting",
+      description: "Complete kitchen transformation, featuring cabinet modernization, countertop installation, and lighting solutions.",
       icon: Home,
       image: "/remodeling.jpg",
     },

@@ -13,68 +13,68 @@ const Portfolio = () => {
 
   const projects = [
     {
+      title: "Facade Renovation & Restoration",
+      category: "Facade",
+      image: "/construction.jpg",
+      description: "Repair and preparation of exterior surfaces. We remove old and peeling paint, treat wood, and apply new coatings and paint to protect and renew your home or building facade.",
+      location: "Hartford, CT",
+      date: "2024",
+      duration: "3 weeks",
+      featured: true,
+    },
+    {
+      title: "Professional Interior Painting",
+      category: "Painting",
+      image: "/painting.jpg",
+      description: "Meticulous interior preparation for painting, including complete protection of floors, furniture, and non-paintable areas. We guarantee high-quality, clean, and efficient finishing to transform any space.",
+      location: "New Haven, CT",
+      date: "2024",
+      duration: "2 weeks",
+      featured: true,
+    },
+    {
+      title: "Custom Carpentry & Finishes",
+      category: "Carpentry",
+      image: "/carpentry.jpg",
+      description: "Construction and installation of interior structures like stairs, walls, and ceilings. We work with various types of wood and finishes to create welcoming and functional environments, including basements and recreational areas.",
+      location: "Bridgeport, CT",
+      date: "2024",
+      duration: "6 weeks",
+      featured: false,
+    },
+    {
+      title: "Kitchen Renovation & Lighting",
+      category: "Kitchen",
+      image: "/remodeling.jpg",
+      description: "Complete kitchen transformation, featuring cabinet modernization, new countertop installation, and focused lighting solutions including pendant lights over islands and ambient lighting design.",
+      location: "Stamford, CT",
+      date: "2024",
+      duration: "8 weeks",
+      featured: true,
+    },
+    {
+      title: "Window Decoration & Treatment",
+      category: "Windows",
+      image: "/services-hero.jpg",
+      description: "Custom window solutions including blinds and curtains installation, combining functionality (light control and privacy) with decorative elements (valances and fabrics).",
+      location: "Waterbury, CT",
+      date: "2023",
+      duration: "1 week",
+      featured: false,
+    },
+    {
       title: "Modern Home Construction",
       category: "Construction",
       image: "/hero-home.jpg",
       description: "New custom home build with contemporary design featuring open floor plans and energy-efficient systems",
-      location: "Hartford, CT",
-      date: "2024",
-      duration: "8 months",
-      featured: true,
-    },
-    {
-      title: "Kitchen Remodeling",
-      category: "Remodeling",
-      image: "/services-hero.jpg",
-      description: "Complete kitchen renovation with custom cabinetry, granite countertops, and modern appliances",
-      location: "New Haven, CT",
-      date: "2024",
-      duration: "6 weeks",
-      featured: true,
-    },
-    {
-      title: "Exterior Painting",
-      category: "Painting",
-      image: "/painting.jpg",
-      description: "Full exterior house painting with premium materials and weather protection coating",
-      location: "Stamford, CT",
-      date: "2023",
-      duration: "2 weeks",
-      featured: false,
-    },
-    {
-      title: "Custom Carpentry",
-      category: "Carpentry",
-      image: "/carpentry.jpg",
-      description: "Custom built-in shelving and woodwork with premium hardwood materials",
-      location: "Bridgeport, CT",
-      date: "2024",
-      duration: "4 weeks",
-      featured: false,
-    },
-    {
-      title: "Commercial Construction",
-      category: "Construction",
-      image: "/construction.jpg",
-      description: "Office space renovation and expansion with modern design and functionality",
-      location: "Waterbury, CT",
-      date: "2023",
-      duration: "12 weeks",
-      featured: true,
-    },
-    {
-      title: "Bathroom Renovation",
-      category: "Remodeling",
-      image: "/remodeling.jpg",
-      description: "Luxury bathroom remodel with modern fixtures, heated floors, and custom tile work",
       location: "Norwalk, CT",
       date: "2024",
-      duration: "5 weeks",
+      duration: "8 months",
       featured: false,
     },
   ];
 
-  const categories = ["All", "Construction", "Remodeling", "Painting", "Carpentry"];
+  const categories = ["All", "Facade", "Painting", "Carpentry", "Kitchen", "Windows", "Construction"];
   
   const filteredProjects = selectedCategory === "All" 
     ? projects 
@@ -84,7 +84,7 @@ const Portfolio = () => {
     { number: "150+", label: "Projects Completed" },
     { number: "12+", label: "Years Experience" },
     { number: "100%", label: "Client Satisfaction" },
-    { number: "50+", label: "Happy Families" },
+    { number: "100+", label: "Happy Families" },
   ];
 
   return (
@@ -243,7 +243,7 @@ const Portfolio = () => {
               
               <div className="mt-12 pt-8 border-t border-blue-500/30">
                 <p className="text-blue-200 text-sm">
-                  Licensed & Insured • Serving Connecticut Since 2012 • 100% Satisfaction Guaranteed
+                  Licensed & Insured | Serving Connecticut Since 2012 | 100% Satisfaction Guaranteed
                 </p>
               </div>
             </div>
